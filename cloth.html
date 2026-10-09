@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Velora | Modern Clothing</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            color: #101820;
+            background: #ffffff;
+            line-height: 1.5;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1160px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 68px;
+            background: #11171d;
+            color: #fff;
+        }
+
+        .nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 34px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #d7dbde;
+            font-size: 11px;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a.active {
+            color: #fff;
+        }
+
+        .nav-links a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -9px;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-icons a {
+            color: #d9dddf;
+            font-size: 15px;
+        }
+
+        .cart {
+            position: relative;
+        }
+
+        .cart-number {
+            position: absolute;
+            top: -8px;
+            right: -9px;
+
+            width: 14px;
+            height: 14px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #e45143;
+            border-radius: 50%;
+
+            color: #fff;
+            font-size: 8px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background: #e7e4de;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            min-height: 410px;
+            display: grid;
+            grid-template-columns: 43% 57%;
+            align-items: center;
+        }
+
+        .hero-text {
+            padding-right: 35px;
+        }
+
+        .small-title {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            color: #30363a;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            line-height: 1.02;
+            letter-spacing: -2px;
+            font-weight: 800;
+            margin-bottom: 17px;
+        }
+
+        .hero-description {
+            max-width: 300px;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #353b3f;
+            margin-bottom: 24px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            background: #111820;
+            color: #fff;
+
+            padding: 11px 18px;
+
+            border-radius: 3px;
+
+            font-size: 10px;
+            font-weight: 500;
+
+            transition: .25s;
+        }
+
+        .button:hover {
+            background: #30383e;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            height: 410px;
+        }
+
+        .hero-image img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            background: #fff;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px 10px;
+            border-right: 1px solid #ededed;
+        }
+
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature i {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #202a30;
+        }
+
+        .feature h3 {
+            font-size: 10px;
+            margin-bottom: 3px;
+        }
+
+        .feature p {
+            color: #888e92;
+            font-size: 8px;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            padding: 38px 0 42px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 23px;
+        }
+
+        .section-title h2 {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .section-title p {
+            color: #8a8f93;
+            font-size: 10px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-image {
+            height: 190px;
+            background: #f1f1f1;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.04);
+        }
+
+        .product-info {
+            padding-top: 8px;
+        }
+
+        .product-name {
+            display: block;
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .product-name:hover {
+            text-decoration: underline;
+        }
+
+        .price {
+            font-size: 9px;
+            margin-bottom: 8px;
+            color: #252b30;
+        }
+
+        .add-cart {
+            display: block;
+            text-align: center;
+
+            background: #101820;
+            color: #fff;
+
+            border-radius: 3px;
+
+            padding: 8px;
+
+            font-size: 8px;
+
+            transition: .25s;
+        }
+
+        .add-cart:hover {
+            background: #303940;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #f7f8f8;
+            padding: 40px 0;
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .about-image {
+            height: 225px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .about-image img {
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.58);
+        }
+
+        .brand {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .about-content .small-title {
+            margin-bottom: 7px;
+        }
+
+        .about-content h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .about-content p {
+            max-width: 450px;
+            color: #6d7377;
+            font-size: 10px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        .newsletter {
+            background: #edf1f5;
+            text-align: center;
+            padding: 24px 0;
+        }
+
+        .newsletter h2 {
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .newsletter p {
+            font-size: 8px;
+            color: #858b8f;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-form {
+            width: 430px;
+            max-width: 90%;
+            margin: auto;
+
+            display: flex;
+            gap: 7px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            height: 31px;
+
+            border: 1px solid #d8dcdf;
+            border-radius: 2px;
+
+            padding: 0 10px;
+
+            font-size: 8px;
+            outline: none;
+        }
+
+        .newsletter-form input:focus {
+            border-color: #777;
+        }
+
+        .newsletter-form button {
+            border: none;
+            background: #111820;
+            color: #fff;
+
+            padding: 0 17px;
+
+            border-radius: 2px;
+
+            font-size: 8px;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background: #343d43;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #11171d;
+            color: #fff;
+        }
+
+        .footer-top {
+            min-height: 94px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-logo {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            color: #8e969b;
+            font-size: 8px;
+            margin-top: 2px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            color: #d0d5d8;
+            font-size: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social a {
+            color: #d0d5d8;
+            font-size: 11px;
+        }
+
+        .social a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #293036;
+            text-align: center;
+            padding: 9px 0;
+        }
+
+        .copyright p {
+            color: #7d858a;
+            font-size: 7px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text {
+                padding: 50px 0 30px;
+            }
+
+            .hero-image {
+                height: 320px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                gap: 20px;
+                flex-wrap: wrap;
+                padding: 25px 0;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 550px) {
+
+            header {
+                height: auto;
+                padding: 15px 0;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .nav-links {
+                width: 100%;
+                order: 3;
+                justify-content: center;
+                gap: 24px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature {
+                border-bottom: 1px solid #eee;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .product-image {
+                height: 150px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                gap: 18px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                height: 36px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+            Velora
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="#hp" class="active">
+                Home
+            </a>
+
+            <a href="#ph">
+                Shop
+            </a>
+
+            <a href="#hph">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="nav-icons">
+
+            <a href="search.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+            <a href="cart.html" class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-number">0</span>
+            </a>
+
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="hp">
+
+    <div class="container hero-inner">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                STYLE MEETS COMFORT
+            </p>
+
+            <h1>
+                Look Good,<br>
+                Feel Better
+            </h1>
+
+            <p class="hero-description">
+                Discover modern clothing designed for
+                your everyday lifestyle.
+            </p>
+
+            <a href="shop.html" class="button">
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1200&q=85"
+                alt="Velora clothing collection"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+    <div class="container feature-grid">
+
+        <div class="feature">
+
+            <i class="fa-solid fa-truck"></i>
+
+            <h3>Free Shipping</h3>
+
+            <p>On all orders over $50</p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <i class="fa-regular fa-shield-halved"></i>
+
+            <h3>Secure Payments</h3>
+
+            <p>Your info is always safe</p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+
+            <h3>Easy Returns</h3>
+
+            <p>Hassle-free within 14 days</p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <i class="fa-solid fa-headphones"></i>
+
+            <h3>24/7 Support</h3>
+
+            <p>We're here to help</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products" id="ph">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Featured Products</h2>
+
+            <p>
+                Our most loved pieces, handpicked for you.
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- HOODIE -->
+
+            <div class="product">
+
+                <a href="product.html?item=hoodie">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80"
+                            alt="Classic Hoodie"
+                        >
+
+                    </div>
+
+                </a>
+
+                <div class="product-info">
+
+                    <a href="product.html?item=hoodie"
+                       class="product-name">
+                        Classic Hoodie
+                    </a>
+
+                    <p class="price">$45.00</p>
+
+                    <a href="cart.html?add=hoodie"
+                       class="add-cart">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- T-SHIRT -->
+
+            <div class="product">
+
+                <a href="product.html?item=tee">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+                            alt="Basic Tee"
+                        >
+
+                    </div>
+
+                </a>
+
+                <div class="product-info">
+
+                    <a href="product.html?item=tee"
+                       class="product-name">
+                        Basic Tee
+                    </a>
+
+                    <p class="price">$25.00</p>
+
+                    <a href="cart.html?add=tee"
+                       class="add-cart">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SWEATSHIRT -->
+
+            <div class="product">
+
+                <a href="product.html?item=sweatshirt">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80"
+                            alt="Sweatshirt"
+                        >
+
+                    </div>
+
+                </a>
+
+                <div class="product-info">
+
+                    <a href="product.html?item=sweatshirt"
+                       class="product-name">
+                        Sweatshirt
+                    </a>
+
+                    <p class="price">$40.00</p>
+
+                    <a href="cart.html?add=sweatshirt"
+                       class="add-cart">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAP -->
+
+            <div class="product">
+
+                <a href="product.html?item=cap">
+
+                    <div class="product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=600&q=80"
+                            alt="Black Cap"
+                        >
+
+                    </div>
+
+                </a>
+
+                <div class="product-info">
+
+                    <a href="product.html?item=cap"
+                       class="product-name">
+                        Cap
+                    </a>
+
+                    <p class="price">$20.00</p>
+
+                    <a href="cart.html?add=cap"
+                       class="add-cart">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="#hph">
+
+    <div class="container about-inner">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85"
+                alt="Velora clothing"
+            >
+
+            <span class="brand">
+                Velora
+            </span>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="small-title">
+                ABOUT VELORA
+            </p>
+
+            <h2>
+                More Than Just Clothes
+            </h2>
+
+            <p>
+                Velora is a modern clothing brand built for people
+                who value comfort, quality, and effortless style.
+                We believe in simple designs, timeless pieces,
+                and clothes that fit your life.
+            </p>
+
+            <a href="about.html" class="button">
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEWSLETTER
+========================= -->
+
+<section class="newsletter">
+
+    <div class="container">
+
+        <h2>
+            Join Our Newsletter
+        </h2>
+
+        <p>
+            Be the first to know about new arrivals,
+            special offers and more.
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-top">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="footer-logo">
+                Velora
+            </a>
+
+            <p>
+                Simple. Stylish. You.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="social">
+
+            <a href="https://instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://twitter.com/" target="_blank">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="https://facebook.com/" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <p>
+            © 2025 Velora. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
